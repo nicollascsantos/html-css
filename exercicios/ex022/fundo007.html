@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento Vertical</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            padding: 15px;
+            font: bold 1em Arial, Sans-serif;
+        }
+
+        .container {
+            width: 50%;
+            height: 50%;
+            background-color: rebeccapurple;
+            background-image: url("imagens/target001.png");
+            background-size: 100% 100%;
+
+            position: relative;
+
+            /* 
+            Transforma o elemento em um "referencial", ou seja, o outro elemento
+            que possuir a porpriedade [position: absolute;], passa a ter seu
+            posicionamento sempre relativo a ele.
+            */
+        }
+
+        .conteudo {
+            width: 50%;
+            height: 50%;
+            background-color: lightseagreen;
+            background-image: url("imagens/target001.png");
+            background-size: 100% 100%;
+
+            position: absolute;
+
+            /*
+            Tem liberdade absoluta para ser posicionado dentro de seu "container",
+            sempre configurando a direção (top, right, bottom ou left) da posição 
+            e o valor da distância do elemento relativo.
+
+            Podemos configurar isso de forma numérica ou percentual (ex.: px, rem, pt, ... , % )
+            */
+        }
+
+        #menor1 {
+            left: 25%;
+            top: 25%;        
+        }
+
+        #menor2 {
+            left: 50%;
+            top: 50%;
+        }
+
+        #menor3 {
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando Posicionamentos</h1>
+
+    <h2> Alinhamento Central </h2>
+    
+    <p>Aqui o alinhamento é feito apenas com base em porcentagens (%):</p>
+    <section class="container">
+        <article id="menor1" class="conteudo"></article>
+    </section>
+
+    <p>Já neste exemplo, a ideia permanece, porém ajustamos a posição usando a porpriedade [transform]:</p>
+
+    <p>1. Sem o ajuste</p>
+
+    <section class="container">
+        <article id="menor2" class="conteudo"></article>
+    </section>
+
+    <p>2. Com o ajuste</p>
+
+    <section class="container">
+            <article id="menor3" class="conteudo"></article>
+    </section>
+</body>
+</html>
