@@ -7,16 +7,39 @@
     <style>
         body {
             height: 100vh;
-            background-color: #000;
-            background-image: url(imagens/wallpaper002.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
+            background: #000 url("imagens/wallpaper002.jpg") no-repeat center center fixed;
             background-size: cover;
+
+            /* SHORTHANDS DE BACKGROUND 
+            
+            - A ordem das propriedades é:
+
+                color > image > position > repeat > ""size"" > attachment
+
+            - Seguindo o exemplo acima:
+
+                background-color: #000;
+                background-image: url(imagens/wallpaper002.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+
+            --> Caso a propriedade "background-size" ainda estiver causando erros 
+                nessa shorthand, ela deve ser retirada dela e adicionada fora da
+                shorthand no seletor. Por exemplo:
+
+                body {
+                    background: #000 url("imagens/wallpaper002.jpg") no-repeat center center fixed;
+                    background-size: cover;
+                }
+
+            */
         }
 
         main {
             background-color: #FFF;
-            width: 400px;
+            max-width: 400px;
             padding: 10px;
             margin: auto;
             box-shadow: 0px 0px 5px #000;
